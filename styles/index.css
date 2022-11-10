@@ -7,108 +7,41 @@
   --dark-grayish-violet: hsl(279, 6%, 55%);
   --very-dark-violet: hsl(278, 68%, 11%);
 }
-body {
-  background-image: url(/images/bg-main-desktop.png);
-  background-position: left;
+body{
+  background: url('/images/bg-main-mobile.png');
+  background-size: 100%;
   background-repeat: no-repeat;
-  background-size: 25% 100%;
-  display: grid;
-  place-items: center;
-  min-height: 100vh;
-  font-family: "Space Grotesk", sans-serif;
-}
-main {
-  width: 85%;
-  margin: auto;
-  display: flex;
-  justify-content: space-between;
-
-}
-.cards {
-  width: 80%;
-}
-.form-section {
-  width: 100%;
+  background-position: top;
   
 }
-.card-front,
-.card-back {
-  background-repeat: no-repeat;
-  background-size: 38.3rem 22rem;
-  margin: 2rem 0;
-  max-width: 38.3rem;
-  min-height: 22rem;
+main,.cards,form, .flex-section{
+  display:flex;
+  flex-direction: column;
 }
-.card-front {
-  background-image: url(/images/bg-card-front.png);
+
+
+
+main{
+  max-width: 375px;
 }
-.card-front img {
-  width: 9rem;
-  align-self: start;
-  padding: 1rem;
-}
-.card-front > div {
-  padding: 1rem;
-}
-.card-back {
-  background-image: url(/images/bg-card-back.png);
-  margin-left: auto;
-  position: relative;
-}
-.card-back input {
-  position: absolute;
-  top: 95px;
-  right: 38px;
-  font-size: 2rem;
-  width: 80px;
-  text-align: end;
-  border: 0;
-  outline: 0;
-  background: transparent;
-}
-.card-back input::placeholder {
-  color: var(--white);
-}
-form {
-  border: 1px solid blue;
-  width: 90%;
-  margin: 10% auto;
-  display: flex;
-  flex-flow: column;
-  height: 300px;
-  justify-content: space-around;
-}
-.confirmed {
-  display: none;
+.cards, .form-section{
+  width: 100%;
+  padding:2rem;
+  margin:0 auto
 }
 .attribution {
   font-size: 11px;
   text-align: center;
 }
+.card-front, .card-back{
+  width:100%;
+}
+.card-front{
+  background:url(/images/bg-card-front.png)
+}
 .attribution a {
   color: hsl(228, 45%, 44%);
 }
 
-@media screen and (max-width: 1001px) {
-  body {
-    background-image: url(/images/bg-main-mobile.png);
-    background-position: top;
-    background-size: 100%;
-  }
-  main {
-    flex-flow: column;
-    margin:0
-  }
-  .cards,
-  .cards div {
-    margin: 2rem 0;
-  }
-  .card-front,
-  .card-back {
-    background-repeat: no-repeat;
-    background-size: 100% 22rem;
-    margin: 0;
-    width: 38.3rem;
-    min-height: 22rem;
-  }
-}
+
+  
