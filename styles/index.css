@@ -22,14 +22,14 @@ main {
   margin: auto;
   display: flex;
   justify-content: space-between;
-  border: 1px solid red;
+
 }
 .cards {
   width: 80%;
 }
 .form-section {
   width: 100%;
-  border: 1px solid red;
+  
 }
 .card-front,
 .card-back {
@@ -97,17 +97,18 @@ form {
   }
   main {
     flex-flow: column;
+    margin:0
   }
   .cards,
   .cards div {
-    margin: 2rem auto;
+    margin: 2rem 0;
   }
   .card-front,
   .card-back {
     background-repeat: no-repeat;
     background-size: 100% 22rem;
-    margin: 2rem 0;
-    max-width: 38.3rem;
+    margin: 0;
+    width: 38.3rem;
     min-height: 22rem;
   }
 }
