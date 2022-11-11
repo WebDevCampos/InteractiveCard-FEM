@@ -11,16 +11,41 @@ body {
   background: url(/images/bg-main-desktop.png) no-repeat left;
   background-size: 25% 100%;
   height: 100vh;
+
+}
+main {
+  max-width: 1440px;
+  margin: 0 auto;
+
+}
+.card-logo {
+  max-width: 100px!important;
+}
+.cards-section {
+  display: flex;
+  justify-content: space-between;
+}
+.card-front, .card-back {
+  min-height: 20.7rem;
+  max-width: 44.7rem;
+  position: relative;
 }
 
 .card-front {
-  background: url(/images/bg-card-front.png) no-repeat;
-  background-size: 100% 100%;
   color: var(--white);
   padding: 1rem;
-}
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 
-.card-back {
-  background: url(/images/bg-card-back.png) no-repeat;
-  background-size: 100% 100%;
+}
+.card-front-img, .card-back-img {
+  max-width: 100%;
+  min-width: 300px;
+}
+.card-back-cvc {
+  position: absolute;
+
+  top: 10px;
+  width: 56px
 }

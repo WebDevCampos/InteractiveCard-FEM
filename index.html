@@ -1,112 +1,114 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<head>
+  <meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <link rel="icon" href="/images/favicon-32x32.png" />
+<link rel="icon" href="/images/favicon-32x32.png" />
 
-    <!--#region Fonts-->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500&display=swap"
-      rel="stylesheet"
-    />
-    <!--#endregion Fonts-->
+<!--#region Fonts-->
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link
+href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500&display=swap"
+rel="stylesheet"
+/>
+<!--#endregion Fonts-->
 
-    <link rel="stylesheet" href="styles/index.css" />
+<link rel="stylesheet" href="styles/index.css" />
 
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi"
-      crossorigin="anonymous"
-    />
 
-    <title>Frontend Mentor | Interactive card details form</title>
-  </head>
-  <body>
-    <main style="max-width: 375px; margin: 0 auto">
-      <div class="cards-section">
-        <div
-          class="card-front"
-          style="
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            height: 100%;
-            max-width: 44.7rem;
-          "
-        >
-          <img src="images/card-logo.svg" style="max-width: 10rem" />
 
-          <p
-            style="
-              font-size: 2.5rem;
-              text-align: center;
-              letter-spacing: 0.3rem;
-              margin: 2.5rem 0;
-            "
-          >
-            0000 0000 0000 0000
-          </p>
+<title>Frontend Mentor | Interactive card details form</title>
+</head>
+<body>
 
-          <div style="display: flex; justify-content: space-between">
-            <p style="font-size: 2rem">Jane Appleseed</p>
-            <p>00/00</p>
-          </div>
-        </div>
+<main>
 
-        <div class="card-back">
-          <input placeholder="000" disabled />
-        </div>
-      </div>
+<div class="cards-section" style="">
+<div class="card-front">
+<div style="position:relative">
+<img src="images/bg-card-front.png" class="card-front-img">
+<div style="position:absolute; top:0">
+<img src="images/card-logo.svg" class="card-logo" />
 
-      <div class="form-section">
-        <form action="">
-          <div class="card-name d-flex flex-column justify-content-between">
-            <label>CARDHOLDER NAME</label>
-            <input type="text" placeholder="e.g. Jane Appleseed" />
-          </div>
-          <div class="card-number d-flex flex-column justify-content-between">
-            <label>CARD NUMBER</label>
-            <input type="text" placeholder="e.g. 1234 5678 9123 0000" />
-          </div>
-          <div class="date-cvc d-flex justify-content-between">
-            <div class="exp-date d-flex flex-column">
-              <label>EXP. DATE (MM/YY)</label>
-              <div class="exp-date-inputs d-flex">
-                <input type="text" placeholder="MM" />
-                <input type="text" placeholder="YY" />
-              </div>
-            </div>
+<p
+style="
+font-size: 2.5rem;
+text-align: center;
+letter-spacing: 0.3rem;
+margin: 2.5rem 0;
+"
+>
+0000 0000 0000 0000
+</p>
 
-            <div class="cvc">
-              <label>CVC</label>
-              <input type="text" placeholder="e.g. 123" />
-            </div>
-          </div>
+<div style="display: flex; justify-content: space-between">
+<p style="font-size: 2rem">
+Jane Appleseed
+</p>
+<p>
+00/00
+</p>
+</div>
+</div>
+</div>
 
-          <button class="confirm-btn">Confirm</button>
-        </form>
+</div>
 
-        <form action="" style="text-align: center; display: none">
-          <img
-            src="images/icon-complete.svg"
-            style="width: 10rem; margin: 0 auto"
-          />
-          <p style="font-size: 3.8rem">THANK YOU</p>
-          <p>We've added your card details</p>
-          <button class="confirm-btn">Continue</button>
-        </form>
-      </div>
-    </main>
+<div class="card-back">
+<div style="position:relative">
+<img src="images/bg-card-back.png" class="card-back-img">
+<div class="card-back-cvc ">
+<input placeholder="000" disabled />
+</div>
 
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
-      crossorigin="anonymous"
-    ></script>
-  </body>
+</div>
+</div>
+</div>
+<div class="form-section">
+<form action="">
+<div class="card-name d-flex flex-column justify-content-between">
+<label>CARDHOLDER NAME</label>
+<input type="text" placeholder="e.g. Jane Appleseed" />
+</div>
+<div class="card-number d-flex flex-column justify-content-between">
+<label>CARD NUMBER</label>
+<input type="text" placeholder="e.g. 1234 5678 9123 0000" />
+</div>
+<div class="date-cvc d-flex justify-content-between">
+<div class="exp-date d-flex flex-column">
+<label>EXP. DATE (MM/YY)</label>
+<div class="exp-date-inputs d-flex">
+<input type="text" placeholder="MM" />
+<input type="text" placeholder="YY" />
+</div>
+</div>
+
+<div class="cvc">
+<label>CVC</label>
+<input type="text" placeholder="e.g. 123" />
+</div>
+</div>
+
+<button class="confirm-btn">Confirm</button>
+</form>
+
+<form action="" style="text-align: center; display: none">
+<img
+src="images/icon-complete.svg"
+style="width: 10rem; margin: 0 auto"
+/>
+<p style="font-size: 3.8rem">
+THANK YOU
+</p>
+<p>
+We've added your card details
+</p>
+<button class="confirm-btn">Continue</button>
+</form>
+</div>
+</main>
+
+</body>
 </html>
