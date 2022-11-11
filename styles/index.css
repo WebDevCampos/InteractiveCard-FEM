@@ -12,32 +12,19 @@ body{
   background-size: 100%;
   background-repeat: no-repeat;
   background-position: top;
+  position:relative;
   
 }
-main,.cards,form, .flex-section{
-  display:flex;
-  flex-direction: column;
-}
-
-
-
 main{
-  max-width: 375px;
-}
-.cards, .form-section{
-  width: 100%;
-  padding:2rem;
-  margin:0 auto
+  border:1px solid red;
+  
+  display:grid;
+  grid-template-columns:auto auto;
+  
 }
 .attribution {
   font-size: 11px;
   text-align: center;
-}
-.card-front, .card-back{
-  width:100%;
-}
-.card-front{
-  background:url(/images/bg-card-front.png)
 }
 .attribution a {
   color: hsl(228, 45%, 44%);
