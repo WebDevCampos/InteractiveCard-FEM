@@ -27,25 +27,39 @@
     <title>Frontend Mentor | Interactive card details form</title>
   </head>
   <body>
-    <main>
+    <main style="max-width: 375px; margin: 0 auto">
       <div class="cards-section">
-        <div class="card-front">
-          <img src="images/bg-card-front.png" />
-          <div>
-            <img src="images/card-logo.svg" />
+        <div
+          class="card-front"
+          style="
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            height: 100%;
+            max-width: 44.7rem;
+          "
+        >
+          <img src="images/card-logo.svg" style="max-width: 10rem" />
 
-            <p>0000 0000 0000 0000</p>
+          <p
+            style="
+              font-size: 2.5rem;
+              text-align: center;
+              letter-spacing: 0.3rem;
+              margin: 2.5rem 0;
+            "
+          >
+            0000 0000 0000 0000
+          </p>
 
+          <div style="display: flex; justify-content: space-between">
             <p style="font-size: 2rem">Jane Appleseed</p>
             <p>00/00</p>
           </div>
         </div>
 
-        <div>
-          <img src="images/bg-card-back.png" />
-          <div>
-            <input placeholder="000" disabled />
-          </div>
+        <div class="card-back">
+          <input placeholder="000" disabled />
         </div>
       </div>
 
