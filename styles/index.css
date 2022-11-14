@@ -61,7 +61,7 @@ main {
   color: var(--white);
   font-weight: 400;
   letter-spacing: 0.3rem;
-  font-size: clamp(1.3rem, 1.3rem + 1vw, 3rem);
+  font-size: clamp(1.8rem, 2vw, 3rem);
 }
 .card-back-inner {
   max-width: 44.7rem;
@@ -105,9 +105,11 @@ main {
   flex-direction: row;
   justify-content: space-between;
 }
+
 .exp-date-inputs input {
   max-width: 6rem;
 }
+
 .exp-date-inputs input:nth-child(2) {
   margin: 0 2rem;
 }
@@ -125,15 +127,25 @@ main {
 .form-complete {
   display: none;
 }
+.form-complete.show {
+  width: 70%;
+  display: flex;
+  flex-flow: column;
+  justify-content: space-between;
+  align-items: center;
+  height: 50%;
+  padding: 3rem;
+}
 label {
+  font-size: clamp(1.5rem, 2vw, 1.8rem);
   color: var(--very-dark-violet);
 }
 input {
   padding: 1rem;
-  border-radius: 1.5rem;
+  border-radius: 1rem;
   outline: 0;
   border: 1px solid var(--light-grayish-violet);
-  font-size: 1.8rem;
+  font-size: clamp(1.5rem, 2vw, 1.8rem);
 }
 .show {
   display: block;
@@ -153,11 +165,12 @@ input {
   .cards-section {
     width: 42rem;
   }
+
   .card-front {
     background: url(/images/bg-card-front.png) no-repeat;
     background-size: 33rem 100%;
     max-width: 33rem;
-    height: 22.4rem;
+    height: 20rem;
     align-self: start;
     order: 2;
     top: -20%;
@@ -167,7 +180,7 @@ input {
     background: url(/images/bg-card-back.png) no-repeat;
     background-size: 33rem 100%;
     max-width: 33rem;
-    height: 22.4rem;
+    height: 20rem;
     margin: 0;
     align-self: end;
   }
@@ -184,6 +197,9 @@ input {
   .form-data {
     height: 35rem;
   }
+  .form-complete.show {
+    width: 100%;
+  }
 }
 
 @media screen and (max-width: 500px) {
@@ -198,6 +214,6 @@ input {
   }
 
   .cvc input {
-    max-width: 6rem;
+    max-width: 10rem;
   }
 }
