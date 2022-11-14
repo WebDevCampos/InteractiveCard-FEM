@@ -1,4 +1,5 @@
 @import url(./reset.css);
+
 :root {
   --linear-gradient: hsl(249, 99%, 64%) to hsl(278, 94%, 30%);
   --red: hsl(0, 100%, 66%);
@@ -16,59 +17,138 @@ main {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  max-width: 144rem;
+  max-width: 101rem;
   margin: 0 auto;
   height: 100vh;
-  border: 1px solid red;
-}
-.cards-section,
-.form-section {
-  width: 100%;
-  border: 1px solid red;
+  padding: 3rem;
 }
 .cards-section {
+  width: 100%;
   display: flex;
   flex-direction: column;
-  gap: 1rem;
-  border: 1px solid red;
+  gap: 3rem;
+}
+
+.card-front,
+.card-back {
+  background-size: 44.7rem 100%;
+  width: 44.7rem;
+  height: 24.5rem;
+  filter: drop-shadow(3rem 1.5rem 3rem rgba(160, 157, 157, 0.219));
 }
 .card-front {
   background: url(/images/bg-card-front.png) no-repeat;
-  background-size: 44.7rem 100%;
-  width: 44.7rem;
-  height: 22.4rem;
 }
 .card-back {
   background: url(/images/bg-card-back.png) no-repeat;
-  background-size: 44.7rem 100%;
-  width: 44.7rem;
-  height: 22.4rem;
+
   margin-left: 10%;
 }
-
-.card-back-inner {
-  max-width: 44.7rem;
-  border: 1px solid red;
+.card-front-inner {
+  padding: 2rem;
   height: 100%;
 
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  color: var(--white);
+}
+.card-logo {
+  max-width: 10rem;
+}
+.card-front-number {
+  text-align: center;
+  color: var(--white);
+  font-weight: 400;
+  letter-spacing: 0.3rem;
+  font-size: clamp(1.3rem, 1.3rem + 1vw, 3rem);
+}
+.card-back-inner {
+  max-width: 44.7rem;
+  height: 100%;
   position: relative;
 }
-.card-back-inner input {
+.card-back-cvc {
   position: absolute;
-  right: 0;
-  top: 45%;
-  width: 6rem;
+  right: 4rem;
+  top: 42%;
+  width: 3.5rem;
+  text-align: end;
+  background: transparent;
+  border: 0;
+}
+.card-back-cvc::placeholder {
+  color: var(--white);
+  letter-spacing: 0.3rem;
 }
 .form-data {
-  margin-left: 15%;
+  width: 70%;
+  height: 35rem;
+  display: flex;
+  flex-flow: column;
+  justify-content: space-between;
 }
-@media screen and (max-width: 900px) {
+.card-name,
+.card-number,
+.exp-date,
+.cvc {
+  display: flex;
+  flex-flow: column;
+  justify-content: space-between;
+  height: 7rem;
+  margin-bottom: 3rem;
+}
+
+.date-cvc,
+.exp-date-inputs {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.exp-date-inputs input {
+  max-width: 6rem;
+}
+.exp-date-inputs input:nth-child(2) {
+  margin: 0 2rem;
+}
+
+.confirm-btn {
+  font-size: 2rem;
+  padding: 1.5rem;
+  letter-spacing: 0.032rem;
+  border-radius: 1rem;
+  border: none;
+  color: var(--white);
+  background-color: var(--very-dark-violet);
+  cursor: pointer;
+}
+.form-complete {
+  display: none;
+}
+label {
+  color: var(--very-dark-violet);
+}
+input {
+  padding: 1rem;
+  border-radius: 1.5rem;
+  outline: 0;
+  border: 1px solid var(--light-grayish-violet);
+  font-size: 1.8rem;
+}
+.show {
+  display: block;
+}
+.hide {
+  display: none;
+}
+@media screen and (max-width: 990px) {
   body {
     background: url(/images/bg-main-mobile.png) no-repeat top;
-    background-size: 100%;
+    background-size: 100% 30%;
   }
   main {
     flex-direction: column;
+    padding: 0;
   }
   .cards-section {
     width: 42rem;
@@ -95,5 +175,29 @@ main {
   .card-back-inner,
   .card-front-inner {
     max-width: 32rem;
+  }
+
+  .card-back-cvc {
+    right: 2rem;
+    top: 41%;
+  }
+  .form-data {
+    height: 35rem;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  main {
+    max-width: 37rem;
+  }
+  .cards-section {
+    width: 37rem;
+  }
+  .form-data {
+    width: 100%;
+  }
+
+  .cvc input {
+    max-width: 6rem;
   }
 }
