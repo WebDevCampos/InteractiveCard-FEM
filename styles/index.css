@@ -60,7 +60,7 @@ main {
   width: 6rem;
 }
 .form-data {
-  margin-left: 25%;
+  margin-left: 15%;
 }
 @media screen and (max-width: 900px) {
   body {
@@ -69,11 +69,9 @@ main {
   }
   main {
     flex-direction: column;
-    
   }
-  .cards-section{
-    width:42rem;
-    
+  .cards-section {
+    width: 42rem;
   }
   .card-front {
     background: url(/images/bg-card-front.png) no-repeat;
@@ -81,9 +79,9 @@ main {
     max-width: 33rem;
     height: 22.4rem;
     align-self: start;
-    order:2;
-      top:-20%;
-    position:relative;
+    order: 2;
+    top: -20%;
+    position: relative;
   }
   .card-back {
     background: url(/images/bg-card-back.png) no-repeat;
@@ -91,7 +89,7 @@ main {
     max-width: 33rem;
     height: 22.4rem;
     margin: 0;
-    align-self:end
+    align-self: end;
   }
 
   .card-back-inner,
