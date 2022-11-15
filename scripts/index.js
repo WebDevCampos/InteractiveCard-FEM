@@ -33,10 +33,17 @@ completeForm.addEventListener("submit", (e) => {
   cardDataForm.classList.remove("hide");
 });
 
-cardDataForm.addEventListener("input", (e) => {
+cardDataForm.addEventListener("keypress", (e) => {
   if (e.target == cardHolderName) {
     cardFrontName.textContent = e.target.value.toUpperCase();
   } else if (e.target == cardNumber) {
+    if (
+      e.target.value.length / 4 == 1 ||
+      e.target.value.length / 9 == 1 ||
+      e.target.value.length / 14 == 1
+    ) {
+      e.target.value = e.target.value + " ";
+    }
     cardFrontNumber.textContent = e.target.value;
   } else if (e.target == expDateMonth) {
     cardFrontMonth.textContent = e.target.value;
