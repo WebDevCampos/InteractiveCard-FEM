@@ -69,16 +69,13 @@ main {
   height: 100%;
   position: relative;
 }
+
 .card-back-cvc {
   position: absolute;
-  right: 4rem;
-  top: 42%;
+  right: 5rem;
+  top: 45%;
   width: 3.5rem;
   text-align: end;
-  background: transparent;
-  border: 0;
-}
-.card-back-cvc::placeholder {
   color: var(--white);
   letter-spacing: 0.3rem;
 }
@@ -199,8 +196,7 @@ input:focus {
   }
 
   .card-back-cvc {
-    right: 2rem;
-    top: 41%;
+    right: 4rem;
   }
   .form-data {
     height: 35rem;

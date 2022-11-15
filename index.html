@@ -30,18 +30,17 @@
 
             <div style="display: flex; justify-content: space-between">
               <p class="person-name">JANE APPLESEED</p>
-              <p>00/00</p>
+              <p>
+                <span class="front-month">00</span>
+                /
+                <span class="front-year">00</span>
+              </p>
             </div>
           </div>
         </div>
         <div class="card-back">
           <div class="card-back-inner">
-            <input
-              type="text"
-              placeholder="000"
-              class="card-back-cvc"
-              disabled
-            />
+            <p class="card-back-cvc">000</p>
           </div>
         </div>
       </div>
@@ -73,14 +72,19 @@
           <div class="exp-date">
             <label>EXP. DATE (MM/YY)</label>
             <div class="exp-date-inputs">
-              <input type="text" placeholder="MM" />
-              <input type="text" placeholder="YY" />
+              <input type="text" placeholder="MM" class="month" maxlength="2" />
+              <input type="text" placeholder="YY" class="year" maxlength="2" />
             </div>
           </div>
 
           <div class="cvc">
             <label>CVC</label>
-            <input type="text" placeholder="e.g. 123" />
+            <input
+              type="text"
+              placeholder="e.g. 123"
+              class="cvc-value"
+              maxlength="3"
+            />
           </div>
         </div>
 
