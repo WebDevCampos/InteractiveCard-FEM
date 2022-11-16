@@ -231,6 +231,9 @@ input:focus {
   }
 }
 @media screen and (max-width: 600px) {
+  main {
+    margin: 5% auto;
+  }
   .cards-section {
     margin-left: 13.5rem;
   }
