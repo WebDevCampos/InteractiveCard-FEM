@@ -55,8 +55,9 @@ cardDataForm.addEventListener("submit", (e) => {
   let cardMonthField = e.target.card_month;
   let cardYearField = e.target.card_year;
   let cardCVCField = e.target.card_cvc;
+  const validName = /^[a-zA-Z\s]*$/;
+  const validNumber = /^[0-9\s]*$/;
   const validateName = (field, placeholderField, text, onlyValid) => {
-    const validName = /^[a-zA-Z\s]*$/;
     if (!field.value) {
       placeholderField.textContent = text;
     } else if (validName.test(field.value) == false) {
@@ -67,7 +68,6 @@ cardDataForm.addEventListener("submit", (e) => {
     }
   };
   const validateNumber = (field, placeholderField, text, onlyValid) => {
-    const validNumber = /^[0-9\s]*$/;
     if (!field.value) {
       placeholderField.textContent = text;
     } else if (validNumber.test(field.value) == false) {
@@ -109,14 +109,19 @@ cardDataForm.addEventListener("submit", (e) => {
   );
   if (
     cardHolderNameField.value !== "" &&
+    validName.test(cardHolderNameField.value) &&
     cardNumberField.value !== "" &&
+    validNumber.test(cardNumberField.value) &&
     cardMonthField.value !== "" &&
+    validNumber.test(cardMonthField.value) &&
     cardYearField.value !== "" &&
-    cardCVCField.value !== ""
+    validNumber.test(cardYearField.value) &&
+    cardCVCField.value !== "" &&
+    validNumber.test(cardCVCField.value)
   ) {
     completeForm.classList.add("show");
     cardDataForm.classList.add("hide");
   }
 
-  console.log(cardHolderNameField.value);
+  console.log(validName.test(cardHolderNameField.value));
 });
