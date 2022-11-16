@@ -232,7 +232,7 @@ input:focus {
 }
 @media screen and (max-width: 600px) {
   main {
-    margin: 5% auto;
+    margin: 1% auto 0;
   }
   .cards-section {
     margin-left: 13.5rem;
