@@ -59,9 +59,11 @@ cardDataForm.addEventListener("submit", (e) => {
 
   const validateName = (field, placeholderField, text, onlyValid) => {
     if (!field.value) {
+      placeholderField.classList.add("show");
       placeholderField.textContent = text;
       field.style.border = "1px solid red";
     } else if (validName.test(field.value) == false) {
+      placeholderField.classList.add("show");
       placeholderField.textContent = onlyValid;
       field.style.border = "1px solid red";
     } else if (field.value || validName.test(field.value) == true) {
@@ -71,9 +73,11 @@ cardDataForm.addEventListener("submit", (e) => {
   };
   const validateNumber = (field, placeholderField, text, onlyValid) => {
     if (!field.value) {
+      placeholderField.classList.add("show");
       placeholderField.textContent = text;
       field.style.border = "1px solid red";
     } else if (validNumber.test(field.value) == false) {
+      placeholderField.classList.add("show");
       placeholderField.textContent = onlyValid;
       field.style.border = "1px solid red";
     } else if (field.value || validNumber.test(field.value) == true) {
