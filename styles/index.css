@@ -23,7 +23,7 @@ main {
   height: 100vh;
   padding: 3rem;
   overflow-x: hidden;
-  overflow-y: hidden;
+  
 }
 .cards-section {
   width: 100%;
