@@ -18,6 +18,7 @@ const notEmptyCVC = document.querySelector(".not-empty-cvc");
 const validName = /^[a-zA-Z\s]*$/;
 const validNumber = /^[0-9\s]*$/;
 cardDataForm.addEventListener("keyup", (e) => {
+  let maxName = 17;
   e.key == "Backspace" ? (e.target.value = "") : null;
 
   e.target == cardHolderName
@@ -35,7 +36,9 @@ cardDataForm.addEventListener("keyup", (e) => {
     : e.target == cvcValue
     ? (cardCvcValue.textContent = e.target.value)
     : null;
-
+  if (cardHolderName.value.length > max) {
+    cardHolderName.value = cardHolderName.value.substring(0, max);
+  }
   !cardHolderName.value
     ? (cardFrontName.textContent = "JANE APPLESEED")
     : !cardNumber.value
