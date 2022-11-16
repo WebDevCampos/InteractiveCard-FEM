@@ -28,6 +28,7 @@ main {
   display: flex;
   flex-direction: column;
   gap: 3rem;
+  transition: all 0.4s;
 }
 
 .card-front,
@@ -109,8 +110,8 @@ main {
   max-width: 6rem;
 }
 
-.exp-date-inputs input:nth-child(2) {
-  margin: 0 2rem;
+.year {
+  margin: 0 1rem;
 }
 
 .confirm-btn {
@@ -122,6 +123,7 @@ main {
   color: var(--white);
   background-color: var(--very-dark-violet);
   cursor: pointer;
+  width: 100%;
 }
 .form-complete {
   display: none;
@@ -130,11 +132,13 @@ main {
   width: 70%;
   display: flex;
   flex-flow: column;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
-  height: 50%;
+  height: 50rem;
   padding: 3rem;
+  transition: all 0.4s;
 }
+
 label {
   font-size: clamp(1.5rem, 2vw, 1.8rem);
   color: var(--very-dark-violet);
@@ -151,10 +155,19 @@ input:focus {
   outline: transparent;
   background-color: transparent;
 }
-
-.show {
-  display: block;
+.not-empty-name,
+.not-empty-number,
+.not-empty-month,
+.not-empty-year,
+.not-empty-cvc {
+  font-size: 1.2rem;
+  color: red;
+  margin: 0.2rem 0 0;
 }
+.show {
+  display: flex !important;
+}
+
 .hide {
   display: none;
 }
@@ -169,13 +182,14 @@ input:focus {
   }
   .cards-section {
     width: 42rem;
+    margin-right: 3rem;
   }
 
   .card-front {
     background: url(/images/bg-card-front.png) no-repeat;
-    background-size: 33rem 100%;
-    max-width: 33rem;
-    height: 20rem;
+    background-size: 41rem 100%;
+    max-width: 41rem;
+    height: 25rem;
     align-self: start;
     order: 2;
     top: -20%;
@@ -183,16 +197,15 @@ input:focus {
   }
   .card-back {
     background: url(/images/bg-card-back.png) no-repeat;
-    background-size: 33rem 100%;
-    max-width: 33rem;
-    height: 20rem;
-
+    background-size: 41rem 100%;
+    max-width: 41rem;
+    height: 25rem;
     z-index: -1;
   }
 
   .card-back-inner,
   .card-front-inner {
-    max-width: 32rem;
+    max-width: 40rem;
   }
 
   .card-back-cvc {
@@ -202,17 +215,42 @@ input:focus {
     height: 35rem;
   }
   .form-complete.show {
-    width: 100%;
+    width: 50%;
     padding: 0;
   }
+  .form-complete.show p {
+    margin: 2rem 0;
+  }
 }
-
+@media screen and (max-width: 600px) {
+  .cards-section {
+    margin-left: 13.5rem;
+  }
+  .card-front {
+    background: url(/images/bg-card-front.png) no-repeat;
+    background-size: 32rem 100%;
+    max-width: 32rem;
+    height: 20rem;
+    align-self: start;
+    order: 2;
+    top: -20%;
+    position: relative;
+  }
+  .card-back {
+    background: url(/images/bg-card-back.png) no-repeat;
+    background-size: 32rem 100%;
+    max-width: 32rem;
+    height: 20rem;
+    z-index: -1;
+  }
+}
 @media screen and (max-width: 500px) {
   main {
     max-width: 30rem;
   }
   .cards-section {
     width: 30rem;
+    margin-right: 15.5rem;
   }
   .card-front,
   .card-back {
@@ -225,5 +263,11 @@ input:focus {
 
   .cvc input {
     max-width: 10rem;
+  }
+  .form-complete.show {
+    width: 100%;
+  }
+  .form-complete.show p {
+    margin: 2rem 0;
   }
 }

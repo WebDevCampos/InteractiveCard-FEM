@@ -8,58 +8,115 @@ let expDateMonth = document.querySelector(".month");
 let expDateYear = document.querySelector(".year");
 let cardFrontMonth = document.querySelector(".front-month");
 let cardFrontYear = document.querySelector(".front-year");
-
 let cvcValue = document.querySelector(".cvc-value");
 let cardCvcValue = document.querySelector(".card-back-cvc");
-cardDataForm.addEventListener("submit", (e) => {
-  e.preventDefault();
-  if (
-    !cardHolderName.value ||
-    !cardNumber.value ||
-    !expDateMonth.value ||
-    !expDateYear.value ||
-    !cvcValue.value
-  ) {
-    alert("Fill the form completely, please");
-  } else {
-    completeForm.classList.toggle("show");
-    cardDataForm.classList.toggle("hide");
-  }
-});
+const notEmptyName = document.querySelector(".not-empty-name");
+const notEmptyNumber = document.querySelector(".not-empty-number");
+const notEmptyMonth = document.querySelector(".not-empty-month");
+const notEmptyYear = document.querySelector(".not-empty-year");
+const notEmptyCVC = document.querySelector(".not-empty-cvc");
 
-completeForm.addEventListener("submit", (e) => {
-  e.preventDefault();
-  completeForm.classList.remove("show");
-  cardDataForm.classList.remove("hide");
-});
+cardDataForm.addEventListener("keyup", (e) => {
+  e.key == "Backspace" ? (e.target.value = "") : null;
 
-cardDataForm.addEventListener("keypress", (e) => {
-  if (e.target == cardHolderName) {
-    cardFrontName.textContent = e.target.value.toUpperCase();
-  } else if (e.target == cardNumber) {
-    if (
-      e.target.value.length / 4 == 1 ||
-      e.target.value.length / 9 == 1 ||
-      e.target.value.length / 14 == 1
-    ) {
-      e.target.value = e.target.value + " ";
-    }
-    cardFrontNumber.textContent = e.target.value;
-  } else if (e.target == expDateMonth) {
-    cardFrontMonth.textContent = e.target.value;
-  } else if (e.target == expDateYear) {
-    cardFrontYear.textContent = e.target.value;
-  } else if (e.target == cvcValue) {
-    cardCvcValue.textContent = e.target.value;
-  }
-
-  !cardHolderName.value ? (cardFrontName.textContent = "JANE APPLESEED") : null;
-
-  !cardNumber.value
-    ? (cardFrontNumber.textContent = "0000 0000 0000 0000")
+  e.target == cardHolderName
+    ? (cardFrontName.textContent = e.target.value.toUpperCase())
+    : (e.target == cardNumber && cardNumber.value.length / 4 == 1) ||
+      cardNumber.value.length / 9 == 1 ||
+      cardNumber.value.length / 14 == 1
+    ? (cardNumber.value += " ")
+    : e.target == cardNumber
+    ? (cardFrontNumber.textContent = e.target.value)
+    : e.target == expDateMonth
+    ? (cardFrontMonth.textContent = e.target.value)
+    : e.target == expDateYear
+    ? (cardFrontYear.textContent = e.target.value)
+    : e.target == cvcValue
+    ? (cardCvcValue.textContent = e.target.value)
     : null;
 
-  !expDateMonth.value ? (cardFrontMonth.textContent = "00") : null;
-  !expDateYear.value ? (cardFrontYear.textContent = "00") : null;
-  !cvcValue.value ? (cardCvcValue.textContent = "000") : null;
+  !cardHolderName.value
+    ? (cardFrontName.textContent = "JANE APPLESEED")
+    : !cardNumber.value
+    ? (cardFrontNumber.textContent = "0000 0000 0000 0000")
+    : !expDateMonth.value
+    ? (cardFrontMonth.textContent = "00")
+    : !expDateYear.value
+    ? (cardFrontYear.textContent = "00")
+    : !cvcValue.value
+    ? (cardCvcValue.textContent = "000")
+    : null;
+});
+
+cardDataForm.addEventListener("submit", (e) => {
+  e.preventDefault();
+  let cardHolderNameField = e.target.cardholder_name;
+  let cardNumberField = e.target.cardholder_number;
+  let cardMonthField = e.target.card_month;
+  let cardYearField = e.target.card_year;
+  let cardCVCField = e.target.card_cvc;
+  const validateName = (field, placeholderField, text, onlyValid) => {
+    const validName = /^[a-zA-Z\s]*$/;
+    if (!field.value) {
+      placeholderField.textContent = text;
+    } else if (validName.test(field.value) == false) {
+      placeholderField.textContent = onlyValid;
+    } else if (field.value || validName.test(field.value) == true) {
+      placeholderField.textContent = "";
+    } else {
+    }
+  };
+  const validateNumber = (field, placeholderField, text, onlyValid) => {
+    const validNumber = /^[0-9\s]*$/;
+    if (!field.value) {
+      placeholderField.textContent = text;
+    } else if (validNumber.test(field.value) == false) {
+      placeholderField.textContent = onlyValid;
+    } else if (field.value || validNumber.test(field.value) == true) {
+      placeholderField.textContent = "";
+    }
+  };
+
+  validateName(
+    cardHolderNameField,
+    notEmptyName,
+    "Please, insert a Name.",
+    "Only letters, please."
+  );
+  validateNumber(
+    cardNumberField,
+    notEmptyNumber,
+    "Please, insert a number.",
+    "Only numbers, please."
+  );
+  validateNumber(
+    cardMonthField,
+    notEmptyMonth,
+    "Please, insert a number.",
+    "Only numbers, please."
+  );
+  validateNumber(
+    cardYearField,
+    notEmptyYear,
+    "Please, insert a number.",
+    "Only numbers, please."
+  );
+  validateNumber(
+    cardCVCField,
+    notEmptyCVC,
+    "Please, insert a number.",
+    "Only numbers, please."
+  );
+  if (
+    cardHolderNameField.value !== "" &&
+    cardNumberField.value !== "" &&
+    cardMonthField.value !== "" &&
+    cardYearField.value !== "" &&
+    cardCVCField.value !== ""
+  ) {
+    completeForm.classList.add("show");
+    cardDataForm.classList.add("hide");
+  }
+
+  console.log(cardHolderNameField.value);
 });
