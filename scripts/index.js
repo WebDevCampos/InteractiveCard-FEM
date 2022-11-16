@@ -19,6 +19,7 @@ const validName = /^[a-zA-Z\s]*$/;
 const validNumber = /^[0-9\s]*$/;
 cardDataForm.addEventListener("keyup", (e) => {
   let maxName = 17;
+  let maxNumber = 19;
   e.key == "Backspace" ? (e.target.value = "") : null;
 
   e.target == cardHolderName
@@ -36,9 +37,15 @@ cardDataForm.addEventListener("keyup", (e) => {
     : e.target == cvcValue
     ? (cardCvcValue.textContent = e.target.value)
     : null;
-  if (cardHolderName.value.length > maxName) {
-    cardHolderName.value = cardHolderName.value.substring(0, maxName);
-  }
+
+  cardHolderName.value.length > maxName
+    ? (cardHolderName.value = cardHolderName.value.substring(0, maxName))
+    : null;
+
+  cardNumber.value.length > maxNumber
+    ? (cardNumber.value = cardNumber.value.substring(0, maxNumber))
+    : null;
+
   !cardHolderName.value
     ? (cardFrontName.textContent = "JANE APPLESEED")
     : !cardNumber.value
