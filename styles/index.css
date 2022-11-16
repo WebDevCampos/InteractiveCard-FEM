@@ -258,11 +258,12 @@ input:focus {
     max-width: 100%;
   }
   .cards-section {
-    width: 100%;
+    width: 90%;
+    margin: 0 auto;
   }
   .card-front,
   .card-back {
-    background-size: 30rem 100%;
+    background-size: 31rem 100%;
   }
   .card-back-inner,
   .card-back-front {
