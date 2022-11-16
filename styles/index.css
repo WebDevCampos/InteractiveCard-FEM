@@ -125,6 +125,9 @@ main {
   cursor: pointer;
   width: 100%;
 }
+.confirm-btn:active {
+  filter: opacity(0.5);
+}
 .form-complete {
   display: none;
 }
@@ -150,6 +153,9 @@ input {
   border: 1px solid var(--light-grayish-violet);
   font-size: clamp(1.5rem, 2vw, 1.8rem);
   background-color: transparent;
+}
+input:hover {
+  cursor: pointer;
 }
 input:focus {
   outline: transparent;
@@ -242,6 +248,9 @@ input:focus {
     max-width: 32rem;
     height: 20rem;
     z-index: -1;
+  }
+  .form-complete.show {
+    width: 100%;
   }
 }
 @media screen and (max-width: 500px) {

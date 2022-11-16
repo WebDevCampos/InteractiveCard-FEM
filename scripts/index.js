@@ -15,7 +15,8 @@ const notEmptyNumber = document.querySelector(".not-empty-number");
 const notEmptyMonth = document.querySelector(".not-empty-month");
 const notEmptyYear = document.querySelector(".not-empty-year");
 const notEmptyCVC = document.querySelector(".not-empty-cvc");
-
+const validName = /^[a-zA-Z\s]*$/;
+const validNumber = /^[0-9\s]*$/;
 cardDataForm.addEventListener("keyup", (e) => {
   e.key == "Backspace" ? (e.target.value = "") : null;
 
@@ -55,25 +56,29 @@ cardDataForm.addEventListener("submit", (e) => {
   let cardMonthField = e.target.card_month;
   let cardYearField = e.target.card_year;
   let cardCVCField = e.target.card_cvc;
-  const validName = /^[a-zA-Z\s]*$/;
-  const validNumber = /^[0-9\s]*$/;
+
   const validateName = (field, placeholderField, text, onlyValid) => {
     if (!field.value) {
       placeholderField.textContent = text;
+      field.style.border = "1px solid red";
     } else if (validName.test(field.value) == false) {
       placeholderField.textContent = onlyValid;
+      field.style.border = "1px solid red";
     } else if (field.value || validName.test(field.value) == true) {
       placeholderField.textContent = "";
-    } else {
+      field.style.border = "1px solid var(--light-grayish-violet)";
     }
   };
   const validateNumber = (field, placeholderField, text, onlyValid) => {
     if (!field.value) {
       placeholderField.textContent = text;
+      field.style.border = "1px solid red";
     } else if (validNumber.test(field.value) == false) {
       placeholderField.textContent = onlyValid;
+      field.style.border = "1px solid red";
     } else if (field.value || validNumber.test(field.value) == true) {
       placeholderField.textContent = "";
+      field.style.border = "1px solid var(--light-grayish-violet)";
     }
   };
 
