@@ -22,9 +22,9 @@ cardDataForm.addEventListener("keyup", (e) => {
 
   e.target == cardHolderName
     ? (cardFrontName.textContent = e.target.value.toUpperCase())
-    : (e.target == cardNumber && cardNumber.value.length / 4 == 1) ||
-      cardNumber.value.length / 9 == 1 ||
-      cardNumber.value.length / 14 == 1
+    : (e.target == cardNumber && cardNumber.value.length == 4) ||
+      cardNumber.value.length == 9 ||
+      cardNumber.value.length == 14
     ? (cardNumber.value += " ")
     : e.target == cardNumber
     ? (cardFrontNumber.textContent = e.target.value)
