@@ -18,6 +18,7 @@ const notEmptyCVC = document.querySelector(".not-empty-cvc");
 const validName = /^[a-zA-Z\s]*$/;
 const validNumber = /^[0-9\s]*$/;
 cardDataForm.addEventListener("keyup", (e) => {
+  /*Set the max value forinputs on Android*/
   const setMaxForAndroid = (max, inputField) => {
     inputField.value.length > max
       ? (inputField.value = inputField.value.substring(0, max))
@@ -28,6 +29,7 @@ cardDataForm.addEventListener("keyup", (e) => {
   setMaxForAndroid(2, expDateMonth);
   setMaxForAndroid(2, expDateYear);
   setMaxForAndroid(3, cvcValue);
+  /*Set the max value forinputs on Android*/
   e.key == "Backspace" ? (e.target.value = "") : null;
 
   e.target == cardHolderName
