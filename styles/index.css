@@ -188,7 +188,6 @@ input:focus {
   }
   .cards-section {
     width: 42rem;
-    margin-right: 3rem;
   }
 
   .card-front {
@@ -232,9 +231,7 @@ input:focus {
   main {
     margin: 1% auto 0;
   }
-  .cards-section {
-    margin-left: 13.5rem;
-  }
+
   .card-front {
     background: url(/images/bg-card-front.png) no-repeat;
     background-size: 32rem 100%;
