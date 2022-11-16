@@ -187,7 +187,8 @@ input:focus {
     margin: 10% auto;
   }
   .cards-section {
-    width: 42rem;
+    width: 100%;
+    align-items: center;
   }
 
   .card-front {
@@ -257,10 +258,7 @@ input:focus {
   main {
     max-width: 100%;
   }
-  .cards-section {
-    width: 90%;
-    margin: 0 auto;
-  }
+
   .card-front,
   .card-back {
     background-size: 31rem 100%;
