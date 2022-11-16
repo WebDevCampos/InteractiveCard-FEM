@@ -36,8 +36,8 @@ cardDataForm.addEventListener("keyup", (e) => {
     : e.target == cvcValue
     ? (cardCvcValue.textContent = e.target.value)
     : null;
-  if (cardHolderName.value.length > max) {
-    cardHolderName.value = cardHolderName.value.substring(0, max);
+  if (cardHolderName.value.length > maxName) {
+    cardHolderName.value = cardHolderName.value.substring(0, maxName);
   }
   !cardHolderName.value
     ? (cardFrontName.textContent = "JANE APPLESEED")
