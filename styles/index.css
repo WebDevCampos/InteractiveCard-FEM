@@ -232,9 +232,7 @@ input:focus {
   main {
     margin: 1% auto 0;
   }
-  .cards-section {
-    width: 100%;
-  }
+
   .card-front {
     background: url(/images/bg-card-front.png) no-repeat;
     background-size: 32rem 100%;
@@ -260,7 +258,9 @@ input:focus {
   main {
     max-width: 100%;
   }
-
+  .cards-section {
+    width: 100%;
+  }
   .card-front,
   .card-back {
     background-size: 31rem 100%;
